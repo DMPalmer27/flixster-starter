@@ -1,4 +1,4 @@
-.movie-card{
+.movie-card {
     margin: 10px;
     width: 200px;
     max-width: 300px;
@@ -7,7 +7,7 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.movie-card:hover{
+.movie-card:hover {
     transform: scale(1.05)
 }
 
@@ -17,17 +17,20 @@
     height: 300px;
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
     .movie-card {
         width: 100px;
     }
+
     .movie-image {
         width: 100px;
         height: 150px;
     }
+
     h3 {
         font-size: 50%;
     }
+
     p {
         font-size: 50%;
     }

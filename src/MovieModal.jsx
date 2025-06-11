@@ -1,8 +1,9 @@
 import { useRef } from 'react'
 import PropTypes from 'prop-types'
+import YouTube from 'react-youtube'
 import './MovieModal.css'
 
-const MovieModal = ({data, setModalMovie}) => {
+const MovieModal = ({data, setModalMovie, trailer}) => {
     const modalRef = useRef(null);
 
     const handleModalClick = (e) => {
@@ -35,6 +36,15 @@ const MovieModal = ({data, setModalMovie}) => {
                         </div>
                     </div>
                 </div>
+                <div className='trailer'>
+                    {trailer.results ? 
+                        <YouTube  videoId={trailer.results[0].key}/>
+                        : <h3>Video Loading...</h3>}
+                </div>
+
+                {/* {trailer.results ? 
+                    <iframe src={`https://www.youtube.com/embed/${trailer.results[0].key}?`}/>
+                    : <h3>Video Loading...</h3> } */}
             </div>
         </div>
     )
@@ -43,6 +53,7 @@ const MovieModal = ({data, setModalMovie}) => {
 MovieModal.propTypes = {
     //data: PropTypes.object.isRequired,
     setModalMovie: PropTypes.func.isRequired,
+    //trailer: PropTypes.object.isRequired,
 }
 
 export default MovieModal

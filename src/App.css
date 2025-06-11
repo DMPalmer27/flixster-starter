@@ -29,3 +29,23 @@
     flex-direction: column;
   }
 }
+
+header {
+  background-color: grey;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  height: 40px;
+  width: 100%;
+  background-color: grey;
+}
+
+.load-btn {
+  height: 80px;
+  width: 200px;
+  margin: 30px;
+}
