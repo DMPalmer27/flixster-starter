@@ -11,7 +11,7 @@ const App = () => {
   const [data, setData] = useState('');
   const [modalMovie, setModalMovie] = useState('');
   const [modalData, setModalData] = useState('');
-  const [modalTrailer, setModalTrailer] = useState('');
+  const [modalVideos, setModalVideos] = useState('');
   const [isLoaded, setIsLoaded] = useState(true);
 
   //This function fetches the data for the movie cards
@@ -57,7 +57,7 @@ const App = () => {
     }
   }
 
-  const fetchTrailerData = async () => {
+  const fetchVideoData = async () => {
     try{
       const apiKey = import.meta.env.VITE_API_KEY;
       const response = await fetch(`https://api.themoviedb.org/3/movie/${modalMovie}/videos?language=en-US&api_key=${apiKey}`)
@@ -65,7 +65,7 @@ const App = () => {
         throw new Error('Failed to get trailer');
       }
       const responseJSON = await response.json();
-      setModalTrailer(responseJSON);
+      setModalVideos(responseJSON);
     } catch (error) {
       console.error(error);
     }
@@ -86,7 +86,7 @@ const App = () => {
   useEffect(() => {
     if (modalMovie) { //only request data if there is a movie to request data for
       fetchDetailedData();
-      fetchTrailerData();
+      fetchVideoData();
     }
   }, [modalMovie])
 
@@ -102,7 +102,7 @@ const App = () => {
         <ControlBar onSearchSubmit={handleSearchSubmit} onSortChange={setSortMetric} />
         <MovieList data={data} sortMetric={sortMetric} handlePosterClick={setModalMovie} />
         {isLoaded && <button className='load-btn' onClick={() => setPage((page) => page + 1)}>Load More</button>}
-        {modalMovie && <MovieModal data={modalData} setModalMovie={setModalMovie} trailer={modalTrailer}/>}
+        {modalMovie && <MovieModal data={modalData} setModalMovie={setModalMovie} videos={modalVideos}/>}
       </main>
       <footer></footer>
     </div>

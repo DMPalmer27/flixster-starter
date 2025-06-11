@@ -3,13 +3,22 @@ import PropTypes from 'prop-types'
 import YouTube from 'react-youtube'
 import './MovieModal.css'
 
-const MovieModal = ({data, setModalMovie, trailer}) => {
+const MovieModal = ({data, setModalMovie, videos}) => {
     const modalRef = useRef(null);
 
     const handleModalClick = (e) => {
         if (e.target === modalRef.current){ //click outside the modal
             setModalMovie('');
         }
+    }
+
+    const getTrailer = () => {
+        for (let video of videos.results){
+            if (video.type === 'Trailer'){
+                return video.key;
+            }
+        }
+        return videos.results[0].key;
     }
 
     return (
@@ -32,29 +41,23 @@ const MovieModal = ({data, setModalMovie, trailer}) => {
                                     )
                                 })}
                             </ul> : 
-                            <h3>Genres Loading</h3>}
+                            <h3>Genres Loading...</h3>}
                         </div>
                     </div>
                 </div>
                 <div className='trailer'>
-                    {trailer.results ? 
-                        <YouTube  videoId={trailer.results[0].key}
+                    {videos.results ? 
+                        <YouTube videoId={getTrailer()}
                             opts={{width: "300", height: "200"}}/>
                         : <h3>Video Loading...</h3>}
                 </div>
-
-                {/* {trailer.results ? 
-                    <iframe src={`https://www.youtube.com/embed/${trailer.results[0].key}?`}/>
-                    : <h3>Video Loading...</h3> } */}
             </div>
         </div>
     )
 }
 
 MovieModal.propTypes = {
-    //data: PropTypes.object.isRequired,
     setModalMovie: PropTypes.func.isRequired,
-    //trailer: PropTypes.object.isRequired,
 }
 
 export default MovieModal
