@@ -26,7 +26,7 @@ const MovieModal = ({data, setModalMovie, videos}) => {
             <div className='modal'>
                 <h1>Movie: {data.original_title}</h1>
                 <div className='movie-mvp-info'>
-                    <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`} alt={`Movie poster for ${data.original_title}`}/>
+                    <img className='movie-poster' src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`} alt={`Movie background poster for ${data.original_title}`}/>
                     <div className='text-info'>
                         <h3>Release Date: {data.release_date}</h3>
                         <h3>Runtime: {data.runtime} minutes</h3>
