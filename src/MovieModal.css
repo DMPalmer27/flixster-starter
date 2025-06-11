@@ -1,0 +1,62 @@
+.modal-overlay{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    box-shadow: 0 24px 24px black;
+    border-radius: 7%;
+    padding: 15px;
+    background-color: white;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.movie-poster {
+    height: 300px;
+    width: 200px;
+    border-radius: 7%;
+}
+
+.movie-mvp-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.text-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.genres {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 600px){
+    .movie-poster {
+        height: 150px;
+        width: 100px;
+    }
+    h1 {
+        font-size: 100%;
+    }
+    li {
+        font-size: 50%;
+    }
+}

@@ -2,7 +2,7 @@ import MovieCard from "./MovieCard"
 import PropTypes from 'prop-types'
 import './MovieList.css'
 
-const MovieList = ({data, sortMetric}) => {
+const MovieList = ({data, sortMetric, handlePosterClick}) => {
     if (!data){
         return (
             <h1>No available data</h1>
@@ -34,6 +34,8 @@ const MovieList = ({data, sortMetric}) => {
                         poster={movie.poster_path}
                         voteAvg={movie.vote_average}
                         key={movie.id}
+                        handlePosterClick={handlePosterClick}
+                        id={movie.id}
                     />
                 )
             })}

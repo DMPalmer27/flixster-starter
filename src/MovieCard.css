@@ -16,3 +16,19 @@
     width: 200px;
     height: 300px;
 }
+
+@media (max-width: 600px){
+    .movie-card {
+        width: 100px;
+    }
+    .movie-image {
+        width: 100px;
+        height: 150px;
+    }
+    h3 {
+        font-size: 50%;
+    }
+    p {
+        font-size: 50%;
+    }
+}
