@@ -9,7 +9,6 @@ const ControlBar = ({ onSearchSubmit, onSortChange }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearchSubmit(searchString);
-    setSearchString("");
   };
 
   const handleSortSelection = (e) => {
