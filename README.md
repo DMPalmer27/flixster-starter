@@ -4,7 +4,7 @@ Submitted by: Daniel Palmer
 
 Estimated time spent: 12 hours spent in total
 
-Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (**required**): (https://flixster-starter-3fmz.onrender.com/)
 
 ### Application Features
 
@@ -100,28 +100,26 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+`https://www.loom.com/share/7aa031b052fb4f4ca0392d436d8d0d2a?sid=6f771011-35f9-40f6-b1ee-67582f206fc2`
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes they did, I felt very prepared to complete every part of this assignment.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+I finished early and completed every stretch feature, so there is nothing that I would have added if I had more time. If I had to come up with something, I would improve the styling and make it more original.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+My demo did go well as I had thoroughly tested my website and was prepared. 
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+I used the React Youtube library which renders an iframe with some ease of implementation. It is described in this article: https://medium.com/@otooker/embedding-a-youtube-video-in-react-9be0040b050d. 
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+I discussed my project with Theo Prosise which was much appreciated.
