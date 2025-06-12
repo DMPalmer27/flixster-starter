@@ -16,7 +16,7 @@ const App = () => {
   const [isLoaded, setIsLoaded] = useState(true);
   const [favorites, setFavorites] = useState({});
   const [watched, setWatched] = useState({});
-  const [shownMovies, setShownMovies] = useState('now-playing');
+  const [shownMovies, setShownMovies] = useState('home');
 
   //This function fetches the data for the movie cards
   const fetchData = async () => {
@@ -116,7 +116,7 @@ const App = () => {
           setWatched={setWatched}
           shownMovies={shownMovies}
         />
-        {isLoaded && <button className='load-btn' onClick={() => setPage((page) => page + 1)}>Load More</button>}
+        {(isLoaded && (shownMovies==='home')) && <button className='load-btn' onClick={() => setPage((page) => page + 1)}>Load More</button>}
         {modalMovie && <MovieModal data={modalData} setModalMovie={setModalMovie} videos={modalVideos}/>}
       </main>
       <footer></footer>

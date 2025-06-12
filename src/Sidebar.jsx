@@ -5,9 +5,9 @@ const Sidebar = ({shownMovies, setShownMovies}) => {
     return (
         <div className='sidebar'>
             <ul>
-                <li className={shownMovies==='now-playing' ? 'active' : 'inactive'} 
-                    id='now-playing'
-                    onClick={()=>setShownMovies('now-playing')}>Now-Playing</li>
+                <li className={shownMovies==='home' ? 'active' : 'inactive'} 
+                    id='home'
+                    onClick={()=>setShownMovies('home')}>Home</li>
                 <li className={shownMovies==='favorites' ? 'active' : 'inactive'} 
                     id='favorites'
                     onClick={()=>setShownMovies('favorites')}>Favorites</li>
@@ -18,6 +18,5 @@ const Sidebar = ({shownMovies, setShownMovies}) => {
         </div>
     );
 }
-
 
 export default Sidebar

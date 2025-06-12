@@ -5,6 +5,7 @@
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
+  margin-left: 200px;
 }
 
 .App-header {
@@ -17,7 +18,21 @@
   padding: 20px;
 }
 
+header {
+  background-color: grey;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 @media (max-width: 600px) {
+
+  .App {
+    margin-left: 0px;
+  }
+
   .movie-card {
     width: 100%;
   }
@@ -32,13 +47,7 @@
   }
 }
 
-header {
-  background-color: grey;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 footer {
   height: 40px;

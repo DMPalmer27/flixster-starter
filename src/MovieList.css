@@ -2,12 +2,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 200px;
     justify-content: center;
 }
 
-@media(max-width: 600px){
-    .movie-container {
-        margin-left: 0px;
-    }
-}

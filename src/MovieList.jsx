@@ -30,6 +30,10 @@ const MovieList = ({data, sortMetric, handlePosterClick, favorites, setFavorites
     } else if (shownMovies === 'watched'){
         sortedData = sortedData.filter((movie)=>watched[movie.id])
     }
+    let noMovies = true;
+    if (sortedData.length != 0){
+        noMovies = false;
+    }
     return (
         <div className='movie-container'>
             {sortedData.map((movie)=>{
@@ -48,6 +52,7 @@ const MovieList = ({data, sortMetric, handlePosterClick, favorites, setFavorites
                     />
                 )
             })}
+            {noMovies && <h3>No Movies To Display</h3>}
         </div>
     )
 }
