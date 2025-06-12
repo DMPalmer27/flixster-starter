@@ -17,6 +17,12 @@
     height: 300px;
 }
 
+.favorites-watched {
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 5; /*Make it appear above everything*/
+}
+
 @media (max-width: 600px) {
     .movie-card {
         width: 100px;

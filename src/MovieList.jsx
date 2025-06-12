@@ -2,7 +2,7 @@ import MovieCard from "./MovieCard"
 import PropTypes from 'prop-types'
 import './MovieList.css'
 
-const MovieList = ({data, sortMetric, handlePosterClick}) => {
+const MovieList = ({data, sortMetric, handlePosterClick, favorites, setFavorites, watched, setWatched}) => {
     if (!data){
         return (
             <h1>No available data</h1>
@@ -36,6 +36,10 @@ const MovieList = ({data, sortMetric, handlePosterClick}) => {
                         key={movie.id}
                         handlePosterClick={handlePosterClick}
                         id={movie.id}
+                        favorites={favorites}
+                        setFavorites={setFavorites}
+                        watched={watched}
+                        setWatched={setWatched}
                     />
                 )
             })}

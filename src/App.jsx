@@ -13,6 +13,8 @@ const App = () => {
   const [modalData, setModalData] = useState('');
   const [modalVideos, setModalVideos] = useState('');
   const [isLoaded, setIsLoaded] = useState(true);
+  const [favorites, setFavorites] = useState({});
+  const [watched, setWatched] = useState({});
 
   //This function fetches the data for the movie cards
   const fetchData = async () => {
@@ -100,7 +102,15 @@ const App = () => {
       </section>
       <main>
         <ControlBar onSearchSubmit={handleSearchSubmit} onSortChange={setSortMetric} />
-        <MovieList data={data} sortMetric={sortMetric} handlePosterClick={setModalMovie} />
+        <MovieList 
+          data={data} 
+          sortMetric={sortMetric} 
+          handlePosterClick={setModalMovie}
+          favorites={favorites}
+          setFavorites={setFavorites}
+          watched={watched}
+          setWatched={setWatched}
+        />
         {isLoaded && <button className='load-btn' onClick={() => setPage((page) => page + 1)}>Load More</button>}
         {modalMovie && <MovieModal data={modalData} setModalMovie={setModalMovie} videos={modalVideos}/>}
       </main>
