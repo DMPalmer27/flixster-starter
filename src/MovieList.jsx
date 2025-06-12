@@ -2,7 +2,7 @@ import MovieCard from "./MovieCard"
 import PropTypes from 'prop-types'
 import './MovieList.css'
 
-const MovieList = ({data, sortMetric, handlePosterClick, favorites, setFavorites, watched, setWatched}) => {
+const MovieList = ({data, sortMetric, handlePosterClick, favorites, setFavorites, watched, setWatched, shownMovies}) => {
     if (!data){
         return (
             <h1>No available data</h1>
@@ -24,6 +24,11 @@ const MovieList = ({data, sortMetric, handlePosterClick, favorites, setFavorites
         sortedData.sort((a,b)=>{
             return b.vote_average - a.vote_average;
         })
+    }
+    if (shownMovies === 'favorites'){
+        sortedData = sortedData.filter((movie)=>favorites[movie.id])
+    } else if (shownMovies === 'watched'){
+        sortedData = sortedData.filter((movie)=>watched[movie.id])
     }
     return (
         <div className='movie-container'>

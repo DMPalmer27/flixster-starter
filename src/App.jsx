@@ -3,6 +3,7 @@ import './App.css'
 import MovieList from './MovieList'
 import ControlBar from './ControlBar'
 import MovieModal from './MovieModal'
+import Sidebar from './Sidebar'
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,6 +16,7 @@ const App = () => {
   const [isLoaded, setIsLoaded] = useState(true);
   const [favorites, setFavorites] = useState({});
   const [watched, setWatched] = useState({});
+  const [shownMovies, setShownMovies] = useState('now-playing');
 
   //This function fetches the data for the movie cards
   const fetchData = async () => {
@@ -59,6 +61,7 @@ const App = () => {
     }
   }
 
+  //This function vetches the data about a movie's videos so that the trailer can be watched in the modal
   const fetchVideoData = async () => {
     try{
       const apiKey = import.meta.env.VITE_API_KEY;
@@ -101,6 +104,7 @@ const App = () => {
         <h3>Movie Searching Tool</h3>
       </section>
       <main>
+        <Sidebar shownMovies={shownMovies} setShownMovies={setShownMovies}/>
         <ControlBar onSearchSubmit={handleSearchSubmit} onSortChange={setSortMetric} />
         <MovieList 
           data={data} 
@@ -110,6 +114,7 @@ const App = () => {
           setFavorites={setFavorites}
           watched={watched}
           setWatched={setWatched}
+          shownMovies={shownMovies}
         />
         {isLoaded && <button className='load-btn' onClick={() => setPage((page) => page + 1)}>Load More</button>}
         {modalMovie && <MovieModal data={modalData} setModalMovie={setModalMovie} videos={modalVideos}/>}

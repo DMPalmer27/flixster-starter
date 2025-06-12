@@ -35,7 +35,6 @@ const MovieCard = ({title, poster, voteAvg, handlePosterClick, id, favorites, se
     }
 
     const handleCardClick = (e) => {
-        console.log(e.target);
         if (e.target !== favoritesRef.current && e.target !== watchedRef.current){
             handlePosterClick(id);
         }
